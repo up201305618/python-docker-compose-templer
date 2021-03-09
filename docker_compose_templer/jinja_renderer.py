@@ -24,6 +24,7 @@ class JinjaRenderer(object):
     env = jinja2.Environment(
         lstrip_blocks=True,
         trim_blocks=True,
+        extensions=['jinja2.ext.do'],
         undefined=jinja2.StrictUndefined
     )
     env.filters = merge_dicts(env.filters, jinja_filter.filters)
